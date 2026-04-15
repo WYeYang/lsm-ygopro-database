@@ -1,52 +1,42 @@
-# LSM 游戏王数据库配置
+# LSM 数据库配置
 
 ## 简介
 
-本仓库包含了基于 Label-SQL Mapping (LSM) 规范的游戏王卡片数据库配置文件。这些配置文件定义了游戏王卡片的标签与 SQL 查询条件之间的映射关系。
+本仓库包含了基于 Label-SQL Mapping (LSM) 规范的数据库配置文件。这些配置文件定义了标签与 SQL 查询条件之间的映射关系。
 
 ## 配置文件
 
 - [main.yaml](main.yaml) - 主配置文件，包含所有标签和数据库配置
-
-## 主要标签
-
-- **属性**：光、暗、地、水、火、风
-- **种族**：龙、魔法师、战士、恶魔、不死、机械、水族、炎族、兽战士、昆虫、植物、岩石、鸟兽、雷族、爬虫类、念动力、幻神兽族、天使、恶魔族、海龙、雷龙、电子界族
-- **卡片类型**：怪兽、魔法、陷阱
-- **怪兽类型**：通常、效果、融合、仪式、同调、XYZ、连接
-- **魔法类型**：通常、永续、装备、场地、速攻、仪式
-- **陷阱类型**：通常、永续、反击
 
 ## 数据库结构
 
 配置文件假设数据库包含以下表结构：
 
 ### 主表（datas）
-- `id`：卡片 ID
-- `name`：卡片名称
-- `type`：卡片类型
-- `attribute`：属性（仅怪兽卡）
-- `race`：种族（仅怪兽卡）
-- `atk`：攻击力（仅怪兽卡）
-- `def`：防御力（仅怪兽卡）
-- `level`：等级（仅怪兽卡）
-- `linkval`：连接值（仅连接怪兽）
-- `scale`：灵摆刻度（仅灵摆怪兽）
-- `ocg_tcg`：OCG/TCG 状态
+- `id`：数据 ID
+- `name`：名称
+- `type`：类型
+- `attribute`：属性
+- `race`：种族
+- `atk`：攻击力
+- `def`：防御力
+- `level`：等级
+- `linkval`：连接值
+- `scale`：刻度
+- `ocg_tcg`：状态
 
 ### 文本表（texts）
-- `id`：卡片 ID
-- `desc`：卡片描述
-- `flavor`：卡片风味文本
+- `id`：数据 ID
+- `desc`：描述
+- `flavor`：风味文本
 
-## 游戏王数据库引用
+## 数据库引用
 
-本配置文件基于以下开源游戏王数据库：
+本配置文件使用以下数据库：
 
 - **GitHub 仓库**：[mycard/ygopro-database](https://github.com/mycard/ygopro-database)
 - **Git 子模块**：已作为 `database` 目录添加到本仓库
-- **卡片数据库文件路径**：`database/locales/zh-CN/cards.cdb`
-- **语言**：简体中文 (zh-CN)
+- **数据库文件路径**：`database/locales/zh-CN/cards.cdb`
 
 ## 初始化子模块
 
@@ -73,7 +63,7 @@ const configPath = './lsm-ygopro-database/main.yaml';
 // 数据库配置
 const dbConfig = {
   type: 'sqlite',
-  path: './lsm-ygopro-database/database/locales/zh-CN/cards.cdb' // 使用子模块中的卡片数据库文件
+  path: './lsm-ygopro-database/database/locales/zh-CN/cards.cdb' // 使用子模块中的数据库文件
 };
 
 // 初始化 SDK
@@ -87,5 +77,4 @@ const result = await sdk.query('attribute = "光" AND race = "龙"');
 
 - [label-sql-mapping-spec](https://github.com/WYeYang/label-sql-mapping-spec) - LSM 1.0 规范文档
 - [label-sql-mapping-sdk](https://github.com/WYeYang/label-sql-mapping-sdk) - LSM SDK 和 CLI 工具
-- [ygopro-card-cli](https://github.com/WYeYang/ygopro-card-cli) - 游戏王卡片查询 CLI 工具
-- [mycard/ygopro-database](https://github.com/mycard/ygopro-database) - 游戏王卡片数据库
+- [mycard/ygopro-database](https://github.com/mycard/ygopro-database) - 数据库
