@@ -44,21 +44,25 @@
 本配置文件基于以下开源游戏王数据库：
 
 - **GitHub 仓库**：[mycard/ygopro-database](https://github.com/mycard/ygopro-database)
-- **卡片数据库文件**：[cards.cdb](https://github.com/mycard/ygopro-database/blob/ad941d3f69be7298824015f4a344e567966dafa0/locales/zh-CN/cards.cdb)
-- **版本**：ad941d3f69be7298824015f4a344e567966dafa0
+- **Git 子模块**：已作为 `database` 目录添加到本仓库
+- **卡片数据库文件路径**：`database/locales/zh-CN/cards.cdb`
 - **语言**：简体中文 (zh-CN)
+
+## 初始化子模块
+
+```bash
+# 克隆仓库时同时克隆子模块
+git clone --recursive https://github.com/WYeYang/lsm-ygopro-database.git
+
+# 或者在已克隆的仓库中初始化子模块
+git submodule update --init --recursive
+```
 
 ## 如何使用
 
-1. 克隆本仓库
-2. 下载指定版本的卡片数据库文件：
-   - 从 [GitHub](https://github.com/mycard/ygopro-database/blob/ad941d3f69be7298824015f4a344e567966dafa0/locales/zh-CN/cards.cdb) 下载 `cards.cdb` 文件
-   - 或者使用命令行：
-     ```bash
-     wget -O ygopro.db https://raw.githubusercontent.com/mycard/ygopro-database/ad941d3f69be7298824015f4a344e567966dafa0/locales/zh-CN/cards.cdb
-     ```
-3. 使用 LSM SDK 加载配置文件
-4. 执行查询操作
+1. 克隆本仓库并初始化子模块（见上文）
+2. 使用 LSM SDK 加载配置文件
+3. 执行查询操作
 
 ```javascript
 const { LSMSDK } = require('label-sql-mapping-sdk');
@@ -69,7 +73,7 @@ const configPath = './lsm-ygopro-database/main.yaml';
 // 数据库配置
 const dbConfig = {
   type: 'sqlite',
-  path: './ygopro.db' // 基于 mycard/ygopro-database 的卡片数据库文件
+  path: './lsm-ygopro-database/database/locales/zh-CN/cards.cdb' // 使用子模块中的卡片数据库文件
 };
 
 // 初始化 SDK
