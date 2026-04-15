@@ -21,7 +21,7 @@
 
 配置文件假设数据库包含以下表结构：
 
-### 主表（cards）
+### 主表（datas）
 - `id`：卡片 ID
 - `name`：卡片名称
 - `type`：卡片类型
@@ -32,11 +32,19 @@
 - `level`：等级（仅怪兽卡）
 - `linkval`：连接值（仅连接怪兽）
 - `scale`：灵摆刻度（仅灵摆怪兽）
+- `ocg_tcg`：OCG/TCG 状态
 
 ### 文本表（texts）
 - `id`：卡片 ID
 - `desc`：卡片描述
 - `flavor`：卡片风味文本
+
+## 游戏王数据库引用
+
+本配置文件基于以下开源游戏王数据库：
+
+- **GitHub 仓库**：[moecube/ygopro-database](https://github.com/moecube/ygopro-database.git)
+- **子路径**：默认使用根目录结构
 
 ## 如何使用
 
@@ -53,7 +61,7 @@ const configPath = './lsm-ygopro-database/main.yaml';
 // 数据库配置
 const dbConfig = {
   type: 'sqlite',
-  path: './ygopro.db'
+  path: './ygopro.db' // 基于 moecube/ygopro-database 的数据库文件
 };
 
 // 初始化 SDK
@@ -65,6 +73,7 @@ const result = await sdk.query('attribute = "光" AND race = "龙"');
 
 ## 相关项目
 
-- [label-sql-mapping-spec](https://github.com/user/label-sql-mapping-spec) - LSM 1.0 规范文档
-- [label-sql-mapping-sdk](https://github.com/user/label-sql-mapping-sdk) - LSM SDK 和 CLI 工具
-- [ygopro-card-cli](https://github.com/user/ygopro-card-cli) - 游戏王卡片查询 CLI 工具
+- [label-sql-mapping-spec](https://github.com/WYeYang/label-sql-mapping-spec) - LSM 1.0 规范文档
+- [label-sql-mapping-sdk](https://github.com/WYeYang/label-sql-mapping-sdk) - LSM SDK 和 CLI 工具
+- [ygopro-card-cli](https://github.com/WYeYang/ygopro-card-cli) - 游戏王卡片查询 CLI 工具
+- [moecube/ygopro-database](https://github.com/moecube/ygopro-database.git) - 游戏王卡片数据库
