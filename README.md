@@ -44,7 +44,18 @@
 本配置文件基于以下开源游戏王数据库：
 
 - **GitHub 仓库**：[moecube/ygopro-database](https://github.com/moecube/ygopro-database.git)
-- **子路径**：默认使用根目录结构
+- **Git 子模块**：已作为 `database` 目录添加到本仓库
+- **子路径**：`database/` 目录
+
+## 初始化子模块
+
+```bash
+# 克隆仓库时同时克隆子模块
+git clone --recursive https://github.com/WYeYang/lsm-ygopro-database.git
+
+# 或者在已克隆的仓库中初始化子模块
+git submodule update --init --recursive
+```
 
 ## 如何使用
 
