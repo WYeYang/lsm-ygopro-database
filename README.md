@@ -43,25 +43,22 @@
 
 本配置文件基于以下开源游戏王数据库：
 
-- **GitHub 仓库**：[moecube/ygopro-database](https://github.com/moecube/ygopro-database.git)
-- **Git 子模块**：已作为 `database` 目录添加到本仓库
-- **子路径**：`database/` 目录
-
-## 初始化子模块
-
-```bash
-# 克隆仓库时同时克隆子模块
-git clone --recursive https://github.com/WYeYang/lsm-ygopro-database.git
-
-# 或者在已克隆的仓库中初始化子模块
-git submodule update --init --recursive
-```
+- **GitHub 仓库**：[mycard/ygopro-database](https://github.com/mycard/ygopro-database)
+- **卡片数据库文件**：[cards.cdb](https://github.com/mycard/ygopro-database/blob/ad941d3f69be7298824015f4a344e567966dafa0/locales/zh-CN/cards.cdb)
+- **版本**：ad941d3f69be7298824015f4a344e567966dafa0
+- **语言**：简体中文 (zh-CN)
 
 ## 如何使用
 
 1. 克隆本仓库
-2. 使用 LSM SDK 加载配置文件
-3. 执行查询操作
+2. 下载指定版本的卡片数据库文件：
+   - 从 [GitHub](https://github.com/mycard/ygopro-database/blob/ad941d3f69be7298824015f4a344e567966dafa0/locales/zh-CN/cards.cdb) 下载 `cards.cdb` 文件
+   - 或者使用命令行：
+     ```bash
+     wget -O ygopro.db https://raw.githubusercontent.com/mycard/ygopro-database/ad941d3f69be7298824015f4a344e567966dafa0/locales/zh-CN/cards.cdb
+     ```
+3. 使用 LSM SDK 加载配置文件
+4. 执行查询操作
 
 ```javascript
 const { LSMSDK } = require('label-sql-mapping-sdk');
@@ -72,7 +69,7 @@ const configPath = './lsm-ygopro-database/main.yaml';
 // 数据库配置
 const dbConfig = {
   type: 'sqlite',
-  path: './ygopro.db' // 基于 moecube/ygopro-database 的数据库文件
+  path: './ygopro.db' // 基于 mycard/ygopro-database 的卡片数据库文件
 };
 
 // 初始化 SDK
@@ -87,4 +84,4 @@ const result = await sdk.query('attribute = "光" AND race = "龙"');
 - [label-sql-mapping-spec](https://github.com/WYeYang/label-sql-mapping-spec) - LSM 1.0 规范文档
 - [label-sql-mapping-sdk](https://github.com/WYeYang/label-sql-mapping-sdk) - LSM SDK 和 CLI 工具
 - [ygopro-card-cli](https://github.com/WYeYang/ygopro-card-cli) - 游戏王卡片查询 CLI 工具
-- [moecube/ygopro-database](https://github.com/moecube/ygopro-database.git) - 游戏王卡片数据库
+- [mycard/ygopro-database](https://github.com/mycard/ygopro-database) - 游戏王卡片数据库
