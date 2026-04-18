@@ -8,7 +8,7 @@
     "extensions"
   ],
   "scripts": {
-    "postinstall": "test -f cards.cdb || curl -sLO https://raw.githubusercontent.com/mycard/ygopro-database/master/locales/zh-CN/cards.cdb"
+    "postinstall": "node install.js"
   },
   "repository": {
     "type": "git",

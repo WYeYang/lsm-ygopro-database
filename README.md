@@ -6,14 +6,10 @@
 
 > ⚠️ 游戏王相关内容版权属于 Konami，仅供学习研究使用。
 
-## 安装/更新
+## 安装
 
 ```bash
-# 一条命令（自动下载）
-npm install lsm-ygopro-database
-
-# 自定义数据库位置
-npm run install --download=./my-cards.cdb
+npm install lsm-ygopro-database --download=https://raw.githubusercontent.com/mycard/ygopro-database/master/locales/zh-CN/cards.cdb
 ```
 
 ## 配置文件
