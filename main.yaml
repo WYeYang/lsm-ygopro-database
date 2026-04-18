@@ -30,6 +30,7 @@ mappings:
   # 卡片类型（互斥）
   - id: card_type
     name: 卡片类型
+    description: 怪兽/魔法/陷阱的类型分类，使用d.type字段位运算判断
     items:
       - condition: (d.type & 1) > 0 AND (d.type & 32) = 0
         value: 通常
@@ -43,6 +44,7 @@ mappings:
   # 魔法类型
   - id: spell_type
     name: 魔法类型
+    description: 魔法卡的细分类型（永续/装备/速攻/场地/仪式），使用d.type字段位运算判断
     condition: (d.type & 2) > 0
     value: 通常
     items:
@@ -60,6 +62,7 @@ mappings:
   # 陷阱类型
   - id: trap_type
     name: 陷阱类型
+    description: 陷阱卡的细分类型（永续/反击），使用d.type字段位运算判断
     condition: (d.type & 4) > 0
     value: 通常
     items:
@@ -71,6 +74,7 @@ mappings:
   # 怪兽分类（可叠加）
   - id: monster_type
     name: 怪兽分类
+    description: 怪兽的额外分类（融合/同调/XYZ/连接/仪式/灵摆），使用d.type字段位运算判断
     items:
       - condition: (d.type & 64) > 0
         value: 融合
@@ -88,6 +92,7 @@ mappings:
   # 调整
   - id: tuner
     name: 调整
+    description: 是否为调整怪兽，使用d.type字段位运算判断
     items:
       - condition: (d.type & 4096) > 0
         value: 调整
@@ -95,6 +100,7 @@ mappings:
   # 属性
   - id: attribute
     name: 属性
+    description: 怪兽属性（地/水/炎/风/光/暗/神），使用d.attribute字段，值为数字编码
     items:
       - condition: d.attribute = 1
         value: 地
@@ -114,6 +120,7 @@ mappings:
   # 种族
   - id: race
     name: 种族
+    description: 怪兽种族（战士/魔法师/龙等），使用d.race字段，值为数字编码
     items:
       - condition: d.race = 1
         value: 战士
@@ -167,6 +174,7 @@ mappings:
   # OCG/TCG
   - id: ocg_tcg
     name: OCG/TCG
+    description: 卡片发行地区，使用d.ot字段判断
     items:
       - condition: d.ot = 1
         value: OCG
@@ -184,29 +192,34 @@ mappings:
   # 等级
   - id: level
     name: 等级
+    description: 怪兽等级（1-12），使用d.level字段，注意LINK怪兽用d.level表示LINK数
     condition: (d.type & 1)
     value: d.level
 
   # 阶级
   - id: rank
     name: 阶级
+    description: XYZ怪兽阶级，使用d.level字段
     condition: (d.type & 8388608)
     value: d.level
 
   # 连接数
   - id: link
     name: LINK
+    description: 连接怪兽的LINK数，使用d.level字段
     condition: (d.type & 67108864)
     value: d.level
 
   # 攻击力
   - id: atk
     name: 攻击力
+    description: 怪兽攻击力，使用d.atk字段
     condition: (d.type & 1)
     value: d.atk
 
   # 防御力
   - id: def
     name: 防御力
+    description: 怪兽防御力，使用d.def字段，LINK怪兽无防御力
     condition: (d.type & 1) AND (d.type & 67108864) = 0
     value: d.def
