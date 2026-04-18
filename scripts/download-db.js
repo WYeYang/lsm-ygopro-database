@@ -6,7 +6,7 @@ const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-const DB_DIR = path.join(__dirname, '..', 'database', 'locales', 'zh-CN');
+const DB_DIR = path.join(__dirname, '..', '..', 'database', 'locales', 'zh-CN');
 const DB_PATH = path.join(DB_DIR, 'cards.cdb');
 const URL = 'https://raw.githubusercontent.com/mycard/ygopro-database/master/locales/zh-CN/cards.cdb';
 
