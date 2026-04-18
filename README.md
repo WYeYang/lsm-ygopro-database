@@ -8,11 +8,15 @@
 ## 安装
 
 ```bash
-# GitHub
+# 方式一：GitHub + 自动下载
 npm install https://github.com/WYeYang/lsm-ygopro-database --db_url=https://raw.githubusercontent.com/mycard/ygopro-database/master/locales/zh-CN/cards.cdb
 
-# 其他 Git 服务器
-npm install https://your-git-server.com/user/lsm-ygopro-database --db_url=...
+# 方式二：手动下载后安装
+curl -sLO https://raw.githubusercontent.com/mycard/ygopro-database/master/locales/zh-CN/cards.cdb
+npm install https://github.com/WYeYang/lsm-ygopro-database --db_url=./cards.cdb
+
+# 方式三：已有数据库文件
+npm install https://github.com/WYeYang/lsm-ygopro-database --db_url=/path/to/cards.cdb
 ```
 
 ## 配置说明
