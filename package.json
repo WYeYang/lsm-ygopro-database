@@ -5,6 +5,7 @@
   "main": "main.yaml",
   "files": [
     "main.yaml",
-    "database/locales/zh-CN/cards.cdb"
+    "database/locales/zh-CN/cards.cdb",
+    "extensions"
   ]
 }
