@@ -1,5 +1,5 @@
 version: "1.0"
-name: 游戏王卡片标签配置
+name: YGOPRO 卡片标签配置
 id: ygopro_card_labels
 database:
   type: sqlite
