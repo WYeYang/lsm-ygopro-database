@@ -583,7 +583,7 @@ items:
   - condition: d.setcode & 0xFFF = 308
     value: 王战
   - condition: d.setcode & 0xFFF = 309
-    value: @火灵天星
+    value: "@火灵天星"
   - condition: d.setcode & 0xFFF = 310
     value: “艾”
   - condition: d.setcode & 0xFFF = 311
