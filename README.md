@@ -14,7 +14,10 @@ https://raw.githubusercontent.com/mycard/ygopro-database/master/locales/zh-CN/ca
 ## 安装
 
 ```bash
+# 1. 下载数据库
 curl -sLO https://raw.githubusercontent.com/mycard/ygopro-database/master/locales/zh-CN/cards.cdb
+
+# 2. 安装并指定数据库
 npm install lsm-ygopro-database --download=./cards.cdb
 ```
 
