@@ -1,6 +1,6 @@
 /**
  * 自动下载游戏王数据库
- * 使用 git clone 只下载单个文件
+ * 使用 git sparse-checkout 下载
  */
 const { execSync } = require('child_process');
 const fs = require('fs');
@@ -26,13 +26,18 @@ function download() {
       fs.mkdirSync(DB_DIR, { recursive: true });
     }
 
-    // 使用 git archive 下载单个文件
+    // 删除旧目录
+    if (fs.existsSync(TMP_DIR)) {
+      fs.rmSync(TMP_DIR, { recursive: true, force: true });
+    }
+
+    // 使用 git sparse-checkout（需要目录）
     const url = 'https://github.com/mycard/ygopro-database.git';
     execSync(`git clone --depth 1 --filter=blob:none --sparse ${url} ${TMP_DIR}`, {
       stdio: 'pipe'
     });
 
-    execSync(`git sparse-checkout set locales/zh-CN/cards.cdb`, {
+    execSync(`git sparse-checkout set locales/zh-CN`, {
       cwd: TMP_DIR,
       stdio: 'pipe'
     });
