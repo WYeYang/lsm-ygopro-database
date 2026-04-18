@@ -3,7 +3,6 @@ name: 游戏王卡片标签配置
 id: ygopro_card_labels
 database:
   type: sqlite
-  path: ./database/locales/zh-CN/cards.cdb
   tables:
     - name: datas
       alias: d
@@ -56,8 +55,6 @@ mappings:
         value: 场地
       - condition: (d.type & 128) > 0
         value: 仪式
-      - condition: (d.type & 1048576) > 0
-        value: 仪式
 
   # 陷阱类型
   - id: trap_type
@@ -69,8 +66,6 @@ mappings:
         value: 永续
       - condition: (d.type & 1048576) > 0
         value: 反击
-      - condition: (d.type & 16777216) > 0
-        value: 永续
 
   # 怪兽分类（可叠加）
   - id: monster_type
@@ -81,7 +76,7 @@ mappings:
       - condition: (d.type & 8192) > 0
         value: 同调
       - condition: (d.type & 8388608) > 0
-        value: 超量
+        value: XYZ
       - condition: (d.type & 67108864) > 0
         value: 连接
       - condition: (d.type & 128) > 0
