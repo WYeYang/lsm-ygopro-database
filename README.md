@@ -39,6 +39,10 @@ lsm-cli -c lsm-ygopro-database --query "攻击力大于2500的龙族怪兽"
 ```javascript
 const { LSMSDK } = require('lsm-sdk');
 
+// 只安装了一个 lsm 模块时，直接用
+const sdk = LSMSDK.fromAppConfig();
+
+// 安装了多个 lsm 模块时，指定包名
 const sdk = LSMSDK.fromAppConfig('lsm-ygopro-database');
 const result = sdk.query('攻击力大于2500');
 ```
