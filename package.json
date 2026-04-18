@@ -2,9 +2,9 @@
   "name": "lsm-ygopro-database",
   "version": "1.0.0",
   "description": "YGOPRO 卡片数据库的 LSM 配置",
-  "main": "main.yaml",
+  "main": "labels.yaml",
   "files": [
-    "main.yaml",
+    "labels.yaml",
     "extensions"
   ],
   "repository": {

@@ -17,7 +17,7 @@ curl -sLO https://raw.githubusercontent.com/mycard/ygopro-database/master/locale
 
 ## 配置说明
 
-### main.yaml 结构
+### labels.yaml 结构
 
 ```yaml
 version: "1.0"           # 配置文件版本
