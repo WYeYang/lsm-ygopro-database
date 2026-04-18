@@ -15,12 +15,14 @@ mappings:
   # 名称
   - id: name
     name: 名称
+    description: 卡片名称（文本字段，可用于名称搜索）
     condition: t.name IS NOT NULL
     value: t.name
 
   # 效果描述
   - id: desc
     name: 效果
+    description: 卡片效果描述（文本字段，可用于效果搜索）
     condition: t.desc IS NOT NULL
     value: t.desc
 

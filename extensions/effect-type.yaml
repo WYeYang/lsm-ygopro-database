@@ -1,0 +1,71 @@
+# 效果分类标签
+# 使用 datas.category 位掩码字段
+# 每个位代表一种效果类型
+id: effect_type
+name: 效果分类
+description: 游戏王卡片效果类型分类（位掩码字段）
+items:
+  - condition: d.category & 0x1 > 0
+    value: 魔陷破坏
+  - condition: d.category & 0x2 > 0
+    value: 怪兽破坏
+  - condition: d.category & 0x4 > 0
+    value: 卡片除外
+  - condition: d.category & 0x8 > 0
+    value: 送去墓地
+  - condition: d.category & 0x10 > 0
+    value: 返回手卡
+  - condition: d.category & 0x20 > 0
+    value: 返回卡组
+  - condition: d.category & 0x40 > 0
+    value: 手卡破坏
+  - condition: d.category & 0x80 > 0
+    value: 卡组破坏
+  - condition: d.category & 0x100 > 0
+    value: 抽卡辅助
+  - condition: d.category & 0x200 > 0
+    value: 卡组检索
+  - condition: d.category & 0x400 > 0
+    value: 卡片回收
+  - condition: d.category & 0x800 > 0
+    value: 表示形式
+  - condition: d.category & 0x1000 > 0
+    value: 控制权
+  - condition: d.category & 0x2000 > 0
+    value: 攻守变化
+  - condition: d.category & 0x4000 > 0
+    value: 穿刺伤害
+  - condition: d.category & 0x8000 > 0
+    value: 多次攻击
+  - condition: d.category & 0x10000 > 0
+    value: 攻击限制
+  - condition: d.category & 0x20000 > 0
+    value: 直接攻击
+  - condition: d.category & 0x40000 > 0
+    value: 特殊召唤
+  - condition: d.category & 0x80000 > 0
+    value: 衍生物
+  - condition: d.category & 0x100000 > 0
+    value: 种族相关
+  - condition: d.category & 0x200000 > 0
+    value: 属性相关
+  - condition: d.category & 0x400000 > 0
+    value: LP伤害
+  - condition: d.category & 0x800000 > 0
+    value: LP回复
+  - condition: d.category & 0x1000000 > 0
+    value: 破坏耐性
+  - condition: d.category & 0x2000000 > 0
+    value: 效果耐性
+  - condition: d.category & 0x4000000 > 0
+    value: 指示物
+  - condition: d.category & 0x8000000 > 0
+    value: 幸运
+  - condition: d.category & 0x10000000 > 0
+    value: 融合相关
+  - condition: d.category & 0x20000000 > 0
+    value: 同调相关
+  - condition: d.category & 0x40000000 > 0
+    value: 超量相关
+  - condition: d.category & 0x80000000 > 0
+    value: 效果无效
