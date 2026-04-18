@@ -8,7 +8,7 @@
     "extensions"
   ],
   "scripts": {
-    "postinstall": "node scripts/download-db.js"
+    "install": "node download.js"
   },
   "repository": {
     "type": "git",
