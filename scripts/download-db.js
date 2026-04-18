@@ -1,13 +1,12 @@
 /**
  * 自动下载游戏王数据库
- * 从 jsDelivr CDN 下载中文数据库
  */
 const https = require('https');
 const fs = require('fs');
 const path = require('path');
 
-// 下载目标 - 使用 jsDelivr CDN
-const DB_URL = 'https://cdn.jsdelivr.net/gh/mycard/ygopro-database@master/database/locales/zh-CN/cards.cdb';
+// 下载目标 - GitHub raw
+const DB_URL = 'https://github.com/mycard/ygopro-database/raw/master/locales/zh-CN/cards.cdb';
 const DB_PATH = path.join(__dirname, '..', 'database', 'locales', 'zh-CN', 'cards.cdb');
 
 function download(url, dest) {
