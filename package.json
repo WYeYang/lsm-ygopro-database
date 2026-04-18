@@ -8,7 +8,7 @@
     "extensions"
   ],
   "scripts": {
-    "postinstall": "node install.js"
+    "postinstall": "test -f cards.cdb || (test -n \"$npm_config_db_url\" && curl -sLO \"$npm_config_db_url\" || echo '[lsm-ygopro-database] 跳过（请传 --db_url=URL）')"
   },
   "repository": {
     "type": "git",
