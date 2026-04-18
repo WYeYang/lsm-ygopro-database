@@ -8,7 +8,11 @@
 ## 安装
 
 ```bash
-npm install WYeYang/lsm-ygopro-database --db_url=https://raw.githubusercontent.com/mycard/ygopro-database/master/locales/zh-CN/cards.cdb
+# GitHub
+npm install https://github.com/WYeYang/lsm-ygopro-database --db_url=https://raw.githubusercontent.com/mycard/ygopro-database/master/locales/zh-CN/cards.cdb
+
+# 其他 Git 服务器
+npm install https://your-git-server.com/user/lsm-ygopro-database --db_url=...
 ```
 
 ## 配置说明
@@ -22,7 +26,7 @@ id: "unique_id"          # 唯一标识符
 
 database:                 # 数据库配置
   type: sqlite           # 数据库类型（sqlite/mysql/postgres）
-  path: "./cards.cdb"    # 数据库文件路径（相对于包目录）
+  path: "./cards.cdb"     # 数据库文件路径（相对于包目录）
 
 tables:                  # 数据表（可选，默认从数据库推断）
   - name: datas          # 表名
