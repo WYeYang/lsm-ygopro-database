@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 
 // 下载目标 - GitHub raw
-const DB_URL = 'https://github.com/mycard/ygopro-database/raw/master/locales/zh-CN/cards.cdb';
+const DB_URL = 'https://raw.githubusercontent.com/mycard/ygopro-database/master/locales/zh-CN/cards.cdb';
 const DB_PATH = path.join(__dirname, '..', 'database', 'locales', 'zh-CN', 'cards.cdb');
 
 function download(url, dest) {
