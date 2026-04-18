@@ -44,7 +44,54 @@ const sdk = LSMSDK.fromAppConfig();
 
 // 安装了多个 lsm 模块时，指定包名
 const sdk = LSMSDK.fromAppConfig('lsm-ygopro-database');
-const result = sdk.query('攻击力大于2500');
+
+// 查询
+const result = await sdk.query({ query: '攻击力大于2500' });
+```
+
+### 返回结果
+
+```javascript
+{
+  sql: "SELECT ...",           // 生成的 SQL 语句
+  data: [{                    // 查询结果
+    id: 123,
+    name: "黑魔术师",
+    atk: 2500,
+    // ...
+  }, ...],
+  total: 100,                 // 总记录数
+  page: 1,                   // 当前页
+  pageSize: 20,              // 每页数量
+  totalPages: 5,             // 总页数
+  explanation: "...",         // AI 对查询的解释
+  extensions: {               // 扩展标签（mode=detail 时嵌入数据）
+    "effect_type": [{ id: 123, values: ["怪兽破坏", "卡片除外"] }],
+    "series": [{ id: 456, values: ["黑魔导"] }]
+  }
+}
+```
+
+### 查询扩展标签
+
+```javascript
+// 查询并返回扩展标签
+const result = await sdk.query({
+  query: '黑魔术师的卡片',
+  extensions: ['效果分类', '系列']  // 指定要查询的扩展标签
+});
+
+// extensions 字段说明
+{
+  "effect_type": [{           // 扩展标签 ID
+    id: 123,                  // 卡片 ID
+    values: ["怪兽破坏"]       // 该卡片匹配的扩展标签值
+  }],
+  "series": [{
+    id: 123,
+    values: ["黑魔导"]
+  }]
+}
 ```
 
 ## 配置说明
