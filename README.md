@@ -24,6 +24,47 @@ npm install https://github.com/WYeYang/lsm-ygopro-database --db_url=/path/to/car
 - **LSM 规范**：[label-sql-mapping-spec](https://github.com/WYeYang/label-sql-mapping-spec) - 配置文件规范
 - **SDK 和 CLI**：[label-sql-mapping-sdk](https://github.com/WYeYang/label-sql-mapping-sdk) - 程序化调用和命令行工具
 
+### 配置文件
+
+SDK 自动从 node_modules 加载配置：
+
+```
+node_modules/
+└── lsm-ygopro-database/
+    ├── main.yaml           # 主配置（数据库、表、标签映射）
+    ├── extensions/         # 扩展标签配置
+    └── lsm.yaml           # LLM 配置（可选）
+```
+
+### LLM 配置
+
+LLM 配置支持两种方式：
+
+**方式一：lsm.yaml 文件（SDK 自动查找）**
+
+在项目根目录或 node_modules/lsm-ygopro-database/ 下创建 `lsm.yaml`：
+
+```yaml
+llm:
+  provider: openai
+  apiKey: your-api-key
+  model: gpt-4o-mini
+```
+
+**方式二：环境变量**
+
+```bash
+export LLM_PROVIDER=openai
+export LLM_API_KEY=your-api-key
+export LLM_MODEL=gpt-4o-mini
+```
+
+**方式三：CLI 指定**
+
+```bash
+lsm-cli -c lsm-ygopro-database -l ./lsm.yaml --query "..."
+```
+
 ### CLI 使用
 
 ```bash
