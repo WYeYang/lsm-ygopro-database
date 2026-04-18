@@ -1,10 +1,5 @@
 # LSM YGOPRO 卡片数据库配置
 
-## 数据来源
-
-- **YGOPRO 数据库**：[mycard/ygopro-database](https://github.com/mycard/ygopro-database)
-- **下载链接**：`https://raw.githubusercontent.com/mycard/ygopro-database/master/locales/zh-CN/cards.cdb`
-
 ## 安装
 
 ```bash
