@@ -3,7 +3,7 @@
 # 每个位代表一种效果类型
 id: effect_type
 name: 效果分类
-description: 游戏王卡片效果类型分类（位掩码字段）
+description: YGOPRO 卡片效果类型分类（位掩码字段）
 items:
   - condition: d.category & 0x1 > 0
     value: 魔陷破坏

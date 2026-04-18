@@ -2,7 +2,7 @@
 # 基于 strings.conf !setname 定义，共 581 个系列
 id: series
 name: 系列
-description: 游戏王卡片所属系列/卡组
+description: YGOPRO 卡片所属系列/卡组
 items:
   - condition: d.setcode & 0xFFF = 1
     value: 正义盟军
