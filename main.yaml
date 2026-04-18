@@ -3,7 +3,6 @@ name: 游戏王卡片标签配置
 id: ygopro_card_labels
 database:
   type: sqlite
-  path: ./database/locales/zh-CN/cards.cdb
   tables:
     - name: datas
       alias: d
@@ -16,14 +15,12 @@ mappings:
   # 名称
   - id: name
     name: 名称
-    description: 卡片名称（文本字段，可用于名称搜索）
     condition: t.name IS NOT NULL
     value: t.name
 
   # 效果描述
   - id: desc
     name: 效果
-    description: 卡片效果描述（文本字段，可用于效果搜索）
     condition: t.desc IS NOT NULL
     value: t.desc
 
@@ -43,30 +40,30 @@ mappings:
   # 魔法类型
   - id: spell_type
     name: 魔法类型
+    condition: (d.type & 2) > 0
+    value: 通常
     items:
-      - condition: (d.type & 2) > 0 AND (d.type & 131072) > 0
+      - condition: (d.type & 131072) > 0
         value: 永续
-      - condition: (d.type & 2) > 0 AND (d.type & 262144) > 0
+      - condition: (d.type & 262144) > 0
         value: 装备
-      - condition: (d.type & 2) > 0 AND (d.type & 65536) > 0
+      - condition: (d.type & 65536) > 0
         value: 速攻
-      - condition: (d.type & 2) > 0 AND (d.type & 524288) > 0
+      - condition: (d.type & 524288) > 0
         value: 场地
-      - condition: (d.type & 2) > 0 AND (d.type & 128) > 0
+      - condition: (d.type & 128) > 0
         value: 仪式
-      - condition: (d.type & 2) > 0
-        value: 通常
 
   # 陷阱类型
   - id: trap_type
     name: 陷阱类型
+    condition: (d.type & 4) > 0
+    value: 通常
     items:
-      - condition: (d.type & 4) > 0 AND (d.type & 131072) > 0
+      - condition: (d.type & 131072) > 0
         value: 永续
-      - condition: (d.type & 4) > 0 AND (d.type & 1048576) > 0
+      - condition: (d.type & 1048576) > 0
         value: 反击
-      - condition: (d.type & 4) > 0
-        value: 通常
 
   # 怪兽分类（可叠加）
   - id: monster_type
@@ -77,7 +74,7 @@ mappings:
       - condition: (d.type & 8192) > 0
         value: 同调
       - condition: (d.type & 8388608) > 0
-        value: 超量
+        value: XYZ
       - condition: (d.type & 67108864) > 0
         value: 连接
       - condition: (d.type & 128) > 0

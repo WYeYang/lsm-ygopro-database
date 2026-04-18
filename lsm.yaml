@@ -1,6 +1,0 @@
-llm:
-  apiKey: ${OPENAI_API_KEY}
-  apiUrl: https://dashscope.aliyuncs.com/compatible-mode/v1
-  model: qwen3.5-flash
-  temperature: 0.7
-  maxTokens: 500
