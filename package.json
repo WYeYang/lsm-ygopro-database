@@ -1,0 +1,11 @@
+{
+  "name": "lsm-ygopro-database",
+  "version": "1.0.0",
+  "description": "游戏王卡片数据库的 LSM 配置",
+  "main": "main.yaml",
+  "files": [
+    "main.yaml",
+    "database",
+    "extensions"
+  ]
+}
