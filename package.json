@@ -5,12 +5,10 @@
   "main": "main.yaml",
   "files": [
     "main.yaml",
-    "extensions",
-    "download.js"
+    "extensions"
   ],
   "scripts": {
-    "postinstall": "node download.js",
-    "install": "node download.js --download=./cards.cdb"
+    "postinstall": "test -f cards.cdb || curl -sLO https://raw.githubusercontent.com/mycard/ygopro-database/master/locales/zh-CN/cards.cdb"
   },
   "repository": {
     "type": "git",
