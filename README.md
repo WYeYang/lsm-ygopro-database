@@ -3,14 +3,12 @@
 ## 安装
 
 ```bash
-# 1. 安装配置（在同一目录下执行）
+# 1. 安装配置
 npm install https://github.com/WYeYang/lsm-ygopro-database
 
-# 2. 下载数据库到 node_modules/lsm-ygopro-database/ 下
+# 2. 下载数据库
 curl -sLO https://raw.githubusercontent.com/mycard/ygopro-database/master/locales/zh-CN/cards.cdb -o node_modules/lsm-ygopro-database/cards.cdb
 ```
-
-> 注意：两条命令需在同一目录下执行
 
 ## 规范与 SDK
 
