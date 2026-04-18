@@ -5,7 +5,14 @@
   "main": "main.yaml",
   "files": [
     "main.yaml",
-    "database/locales/zh-CN/cards.cdb",
-    "extensions"
-  ]
+    "extensions",
+    "scripts"
+  ],
+  "scripts": {
+    "postinstall": "node scripts/download-db.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WYeYang/lsm-ygopro-database.git"
+  }
 }
