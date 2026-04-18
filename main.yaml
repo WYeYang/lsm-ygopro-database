@@ -3,6 +3,7 @@ name: 游戏王卡片标签配置
 id: ygopro_card_labels
 database:
   type: sqlite
+  path: ./database/locales/zh-CN/cards.cdb
   tables:
     - name: datas
       alias: d
