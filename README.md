@@ -14,7 +14,7 @@ https://raw.githubusercontent.com/mycard/ygopro-database/master/locales/zh-CN/ca
 ## 安装
 
 ```bash
-npm install lsm-ygopro-database
+npm install lsm-ygopro-database --download=URL
 ```
 
 ## 配置文件

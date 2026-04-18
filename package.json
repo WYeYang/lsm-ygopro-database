@@ -5,8 +5,7 @@
   "main": "main.yaml",
   "files": [
     "main.yaml",
-    "extensions",
-    "scripts"
+    "extensions"
   ],
   "scripts": {
     "postinstall": "node scripts/download-db.js"
