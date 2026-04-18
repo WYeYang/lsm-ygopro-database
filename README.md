@@ -19,6 +19,30 @@ npm install https://github.com/WYeYang/lsm-ygopro-database --db_url=./cards.cdb
 npm install https://github.com/WYeYang/lsm-ygopro-database --db_url=/path/to/cards.cdb
 ```
 
+## 规范与 SDK
+
+- **LSM 规范**：[label-sql-mapping-spec](https://github.com/WYeYang/label-sql-mapping-spec) - 配置文件规范
+- **SDK 和 CLI**：[label-sql-mapping-sdk](https://github.com/WYeYang/label-sql-mapping-sdk) - 程序化调用和命令行工具
+
+### CLI 使用
+
+```bash
+# 安装 SDK
+npm install https://github.com/WYeYang/label-sql-mapping-sdk
+
+# 命令行查询
+lsm-cli -c lsm-ygopro-database --query "攻击力大于2500的龙族怪兽"
+```
+
+### SDK 使用
+
+```javascript
+const { LSMSDK } = require('lsm-sdk');
+
+const sdk = LSMSDK.fromAppConfig('lsm-ygopro-database');
+const result = sdk.query('攻击力大于2500');
+```
+
 ## 配置说明
 
 ### main.yaml 结构
@@ -30,7 +54,7 @@ id: "unique_id"          # 唯一标识符
 
 database:                 # 数据库配置
   type: sqlite           # 数据库类型（sqlite/mysql/postgres）
-  path: "./cards.cdb"     # 数据库文件路径（相对于包目录）
+  path: "./cards.cdb"    # 数据库文件路径（相对于包目录）
 
 tables:                  # 数据表（可选，默认从数据库推断）
   - name: datas          # 表名
