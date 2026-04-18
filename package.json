@@ -5,10 +5,12 @@
   "main": "main.yaml",
   "files": [
     "main.yaml",
-    "extensions"
+    "extensions",
+    "download.js"
   ],
   "scripts": {
-    "install": "node download.js"
+    "postinstall": "node download.js",
+    "install": "node download.js --download=./cards.cdb"
   },
   "repository": {
     "type": "git",

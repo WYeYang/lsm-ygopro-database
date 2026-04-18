@@ -4,19 +4,16 @@
 
 **来源**：[mycard/ygopro-database](https://github.com/mycard/ygopro-database)
 
-**下载链接**：
-```
-https://raw.githubusercontent.com/mycard/ygopro-database/master/locales/zh-CN/cards.cdb
-```
-
 > ⚠️ 游戏王相关内容版权属于 Konami，仅供学习研究使用。
 
 ## 安装/更新
 
 ```bash
-# 一条命令搞定
-curl -sLO https://raw.githubusercontent.com/mycard/ygopro-database/master/locales/zh-CN/cards.cdb
-npm run install --download=./cards.cdb
+# 一条命令（自动下载）
+npm install lsm-ygopro-database
+
+# 自定义数据库位置
+npm run install --download=./my-cards.cdb
 ```
 
 ## 配置文件
