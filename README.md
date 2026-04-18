@@ -12,7 +12,7 @@
 npm install https://github.com/WYeYang/lsm-ygopro-database
 
 # 2. 下载数据库
-curl -sLO https://raw.githubusercontent.com/mycard/ygopro-database/master/locales/zh-CN/cards.cdb
+curl -sLO https://raw.githubusercontent.com/mycard/ygopro-database/master/locales/zh-CN/cards.cdb -o node_modules/lsm-ygopro-database/cards.cdb
 ```
 
 ## 规范与 SDK
