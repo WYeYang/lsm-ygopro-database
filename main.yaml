@@ -4,7 +4,6 @@ id: ygopro_card_labels
 database:
   type: sqlite
   path: ./database/locales/zh-CN/cards.cdb
-  download: https://github.com/mycard/ygopro-database/blob/master/locales/zh-CN/cards.cdb
   tables:
     - name: datas
       alias: d

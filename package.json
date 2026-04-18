@@ -11,9 +11,6 @@
   "scripts": {
     "postinstall": "node scripts/download-db.js"
   },
-  "dependencies": {
-    "yaml": "^2.3.0"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/WYeYang/lsm-ygopro-database.git"
