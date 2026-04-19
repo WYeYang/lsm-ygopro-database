@@ -34,7 +34,7 @@ items:
     description: 增加抽卡数量或提供额外抽卡机会
   - condition: d.category & 0x200 > 0
     value: 卡组检索
-    description: 从卡组把卡片加入手卡，或从卡组把卡片送墓/特召等
+    description: 从卡组把{keyword}加入手卡，或从卡组把{keyword}送墓/特召等
   - condition: d.category & 0x400 > 0
     value: 卡片回收
     description: 从墓地回收卡片到手卡或场上
