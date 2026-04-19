@@ -16,14 +16,14 @@ mappings:
   # 名称
   - id: name
     name: 名称
-    description: 模糊匹配: t.name LIKE '%{keyword}%'，全匹配: t.name = '{keyword}'
+    description: "模糊匹配: t.name LIKE '%{keyword}%'，全匹配: t.name = '{keyword}'"
     condition: t.name IS NOT NULL
     value: t.name
 
   # 效果描述
   - id: desc
     name: 效果
-    description: 模糊匹配: t.desc LIKE '%{keyword}%'
+    description: "模糊匹配: t.desc LIKE '%{keyword}%'"
     condition: t.desc IS NOT NULL
     value: t.desc
 
@@ -184,34 +184,34 @@ mappings:
   # 等级
   - id: level
     name: 等级
-    description: d.level {operator} {keyword}，operator支持 =, >, <, >=, <=
+    description: "d.level {operator} {keyword}，operator支持 =, >, <, >=, <="
     condition: (d.type & 1)
     value: d.level
 
   # 阶级
   - id: rank
     name: 阶级
-    description: d.level {operator} {keyword}，operator支持 =, >, <, >=, <=
+    description: "d.level {operator} {keyword}，operator支持 =, >, <, >=, <="
     condition: (d.type & 8388608)
     value: d.level
 
   # 连接数
   - id: link
     name: LINK
-    description: d.level {operator} {keyword}，operator支持 =, >, <, >=, <=
+    description: "d.level {operator} {keyword}，operator支持 =, >, <, >=, <="
     condition: (d.type & 67108864)
     value: d.level
 
   # 攻击力
   - id: atk
     name: 攻击力
-    description: d.atk {operator} {keyword}，operator支持 =, >, <, >=, <=
+    description: "d.atk {operator} {keyword}，operator支持 =, >, <, >=, <="
     condition: (d.type & 1)
     value: d.atk
 
   # 防御力
   - id: def
     name: 防御力
-    description: d.def {operator} {keyword}，operator支持 =, >, <, >=, <=
+    description: "d.def {operator} {keyword}，operator支持 =, >, <, >=, <="
     condition: (d.type & 1) AND (d.type & 67108864) = 0
     value: d.def
