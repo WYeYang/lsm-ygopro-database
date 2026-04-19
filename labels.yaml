@@ -16,14 +16,14 @@ mappings:
   # 名称
   - id: name
     name: 名称
-    description: t.name = '{keyword}'
+    description: 模糊匹配: t.name LIKE '%{keyword}%'，全匹配: t.name = '{keyword}'
     condition: t.name IS NOT NULL
     value: t.name
 
   # 效果描述
   - id: desc
     name: 效果
-    description: t.desc LIKE '%{keyword}%'
+    description: 模糊匹配: t.desc LIKE '%{keyword}%'
     condition: t.desc IS NOT NULL
     value: t.desc
 
