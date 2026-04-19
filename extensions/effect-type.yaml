@@ -34,7 +34,7 @@ items:
     description: 增加抽卡数量或提供额外抽卡机会
   - condition: d.category & 0x200 > 0
     value: 卡组检索
-    description: "SQL示例: t.desc LIKE '%从卡组把{keyword}加入手卡%'。{keyword}是用户查询中的检索目标，如'青眼白龙'、'调整'等。示例: t.desc LIKE '%从卡组把青眼白龙加入手卡%'"
+    description: "SQL示例: t.desc LIKE '%从卡组把%{keyword}%加入手卡%'。{keyword}是用户查询中的检索目标，如'青眼白龙'、'调整'等。示例: t.desc LIKE '%从卡组把%青眼白龙%加入手卡%'"
   - condition: d.category & 0x400 > 0
     value: 卡片回收
     description: 从墓地回收卡片到手卡或场上
