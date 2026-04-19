@@ -7,65 +7,97 @@ description: YGOPRO 卡片效果类型分类（位掩码字段）
 items:
   - condition: d.category & 0x1 > 0
     value: 魔陷破坏
+    description: 破坏对方场上的魔法卡或陷阱卡
   - condition: d.category & 0x2 > 0
     value: 怪兽破坏
+    description: 破坏对方场上的怪兽卡
   - condition: d.category & 0x4 > 0
     value: 卡片除外
+    description: 将卡片从游戏中除外（不进入墓地）
   - condition: d.category & 0x8 > 0
     value: 送去墓地
+    description: 将卡片送去墓地
   - condition: d.category & 0x10 > 0
     value: 返回手卡
+    description: 将卡片返回持有者手卡
   - condition: d.category & 0x20 > 0
     value: 返回卡组
+    description: 将卡片返回卡组
   - condition: d.category & 0x40 > 0
     value: 手卡破坏
+    description: 破坏手牌中的卡
   - condition: d.category & 0x80 > 0
     value: 卡组破坏
+    description: 破坏对手卡组顶的卡
   - condition: d.category & 0x100 > 0
     value: 抽卡辅助
+    description: 增加抽卡数量或提供额外抽卡机会
   - condition: d.category & 0x200 > 0
     value: 卡组检索
+    description: 从卡组把卡片加入手卡，或从卡组把卡片送墓/特召等
   - condition: d.category & 0x400 > 0
     value: 卡片回收
+    description: 从墓地回收卡片到手卡或场上
   - condition: d.category & 0x800 > 0
     value: 表示形式
+    description: 改变怪兽的表示形式（攻击/守备）
   - condition: d.category & 0x1000 > 0
     value: 控制权
+    description: 获得对方怪兽的控制权
   - condition: d.category & 0x2000 > 0
     value: 攻守变化
+    description: 改变怪兽的攻击力或守备力
   - condition: d.category & 0x4000 > 0
     value: 穿刺伤害
+    description: 造成穿刺伤害（守备表示怪兽也受战斗伤害）
   - condition: d.category & 0x8000 > 0
     value: 多次攻击
+    description: 怪兽可以在同一次战斗阶段攻击多次
   - condition: d.category & 0x10000 > 0
     value: 攻击限制
+    description: 限制怪兽的攻击次数或攻击对象
   - condition: d.category & 0x20000 > 0
     value: 直接攻击
+    description: 可以直接攻击对方玩家
   - condition: d.category & 0x40000 > 0
     value: 特殊召唤
+    description: 将怪兽从手卡/卡组/墓地特殊召唤
   - condition: d.category & 0x80000 > 0
     value: 衍生物
+    description: 生成衍生物
   - condition: d.category & 0x100000 > 0
     value: 种族相关
+    description: 与怪兽种族相关的效果
   - condition: d.category & 0x200000 > 0
     value: 属性相关
+    description: 与怪兽属性相关的效果
   - condition: d.category & 0x400000 > 0
     value: LP伤害
+    description: 给予对方玩家生命值伤害
   - condition: d.category & 0x800000 > 0
     value: LP回复
+    description: 回复自己的生命值
   - condition: d.category & 0x1000000 > 0
     value: 破坏耐性
+    description: 不会被效果破坏
   - condition: d.category & 0x2000000 > 0
     value: 效果耐性
+    description: 对某些效果免疫
   - condition: d.category & 0x4000000 > 0
     value: 指示物
+    description: 放置或移除指示物
   - condition: d.category & 0x8000000 > 0
     value: 幸运
+    description: 涉及随机性的效果
   - condition: d.category & 0x10000000 > 0
     value: 融合相关
+    description: 与融合召唤相关的效果
   - condition: d.category & 0x20000000 > 0
     value: 同调相关
+    description: 与同调召唤相关的效果
   - condition: d.category & 0x40000000 > 0
     value: 超量相关
+    description: 与超量召唤相关的效果
   - condition: d.category & 0x80000000 > 0
     value: 效果无效
+    description: 无效怪兽或卡片的效果
