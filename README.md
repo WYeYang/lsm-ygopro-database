@@ -49,7 +49,8 @@ mappings:                # 标签映射（核心配置）
 | `description` | 否 | AI 理解标签用途的描述 |
 | `condition` | 否 | SQL WHERE 条件，限制数据范围 |
 | `value` | 否 | 返回结果使用的字段 |
-| `items` | 否 | 枚举值列表（互斥标签） |
+| `items` | 否 | 枚举值列表（有 items 时为标签值筛选） |
+| `range` | 否 | 数值范围约束（有 range 时为数值类型），如 `{ min: 0, max: 5000 }` |
 
 ### items 子配置
 
