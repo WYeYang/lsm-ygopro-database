@@ -187,6 +187,9 @@ mappings:
     description: "d.level {operator} {keyword}，operator支持 =, >, <, >=, <="
     condition: (d.type & 1)
     value: d.level
+    range:
+      min: 0
+      max: 13
 
   # 阶级
   - id: rank
@@ -194,6 +197,9 @@ mappings:
     description: "d.level {operator} {keyword}，operator支持 =, >, <, >=, <="
     condition: (d.type & 8388608)
     value: d.level
+    range:
+      min: 0
+      max: 13
 
   # 连接数
   - id: link
@@ -201,17 +207,26 @@ mappings:
     description: "d.level {operator} {keyword}，operator支持 =, >, <, >=, <="
     condition: (d.type & 67108864)
     value: d.level
+    range:
+      min: 1
+      max: 8
 
   # 攻击力
   - id: atk
     name: 攻击力
-    description: "d.atk {operator} {keyword}，operator支持 =, >, <, >=, <="
+    description: "d.atk {operator} {keyword}，operator支持 =, >, <, >=, <=；-1 代表 ?（不确定数值）"
     condition: (d.type & 1)
     value: d.atk
+    range:
+      min: -1
+      max: 5000
 
   # 防御力
   - id: def
     name: 防御力
-    description: "d.def {operator} {keyword}，operator支持 =, >, <, >=, <="
+    description: "d.def {operator} {keyword}，operator支持 =, >, <, >=, <=；-1 代表 ?（不确定数值）"
     condition: (d.type & 1) AND (d.type & 67108864) = 0
     value: d.def
+    range:
+      min: -1
+      max: 5000
