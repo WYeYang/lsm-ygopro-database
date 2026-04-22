@@ -3,11 +3,7 @@
 ## 安装
 
 ```bash
-# 1. 安装配置
 npm install https://github.com/WYeYang/lsm-ygopro-database
-
-# 2. 下载数据库
-curl -sLO https://raw.githubusercontent.com/mycard/ygopro-database/master/locales/zh-CN/cards.cdb -o node_modules/lsm-ygopro-database/cards.cdb
 ```
 
 ## 规范与 SDK
@@ -16,6 +12,15 @@ curl -sLO https://raw.githubusercontent.com/mycard/ygopro-database/master/locale
 - **SDK 和 CLI**：[label-sql-mapping-sdk](https://github.com/WYeYang/label-sql-mapping-sdk) - 安装和使用方法见 SDK 仓库
 
 ## 配置说明
+
+### 数据库路径配置
+
+数据库文件路径在项目的 `lsm-sdk-js.yaml` 中配置：
+
+```yaml
+# lsm-sdk-js.yaml
+databasePath: ./node_modules/lsm-ygopro-database/cards.cdb
+```
 
 ### labels.yaml 结构
 
@@ -26,7 +31,6 @@ id: "unique_id"          # 唯一标识符
 
 database:                 # 数据库配置
   type: sqlite           # 数据库类型（sqlite/mysql/postgres）
-  path: "./cards.cdb"    # 数据库文件路径（相对于包目录）
 
 tables:                  # 数据表（可选，默认从数据库推断）
   - name: datas          # 表名
