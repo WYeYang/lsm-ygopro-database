@@ -3,7 +3,6 @@ name: YGOPRO 卡片标签配置
 id: ygopro_card_labels
 database:
   type: sqlite
-  path: ./cards.cdb
   tables:
     - name: datas
       alias: d
