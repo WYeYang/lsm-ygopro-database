@@ -12,6 +12,10 @@ database:
       on: d.id = t.id
 
 mappings:
+  # 卡片ID
+  - id: id
+    name: 卡片ID
+    value: d.id
   # 名称
   - id: name
     name: 名称
