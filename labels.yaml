@@ -77,7 +77,7 @@ mappings:
       - condition: (d.type & 8192) > 0
         value: 同调
       - condition: (d.type & 8388608) > 0
-        value: XYZ
+        value: 超量
       - condition: (d.type & 67108864) > 0
         value: 连接
       - condition: (d.type & 128) > 0
@@ -181,11 +181,11 @@ mappings:
       - condition: d.ot = 11
         value: "OCG|TCG"
 
-  # 等级
+  # 等级 - 排除连接怪兽和超量怪兽
   - id: level
     name: 等级
     description: "d.level {operator} {keyword}，operator支持 =, >, <, >=, <="
-    condition: (d.type & 1)
+    condition: (d.type & 1) AND (d.type & 67108864) = 0 AND (d.type & 8388608) = 0
     value: d.level
     range:
       min: 0
