@@ -192,32 +192,95 @@ mappings:
   # 等级 - 排除连接怪兽和超量怪兽
   - id: level
     name: 等级
-    description: "d.level {operator} {keyword}，operator支持 =, >, <, >=, <="
+    description: 怪兽等级
     condition: (d.type & 1) AND (d.type & 67108864) = 0 AND (d.type & 8388608) = 0
-    value: d.level
-    range:
-      min: 0
-      max: 13
+    items:
+      - condition: d.level = 0
+        value: "0"
+      - condition: d.level = 1
+        value: "1"
+      - condition: d.level = 2
+        value: "2"
+      - condition: d.level = 3
+        value: "3"
+      - condition: d.level = 4
+        value: "4"
+      - condition: d.level = 5
+        value: "5"
+      - condition: d.level = 6
+        value: "6"
+      - condition: d.level = 7
+        value: "7"
+      - condition: d.level = 8
+        value: "8"
+      - condition: d.level = 9
+        value: "9"
+      - condition: d.level = 10
+        value: "10"
+      - condition: d.level = 11
+        value: "11"
+      - condition: d.level = 12
+        value: "12"
+      - condition: d.level = 13
+        value: "13"
 
   # 阶级
   - id: rank
     name: 阶级
-    description: "d.level {operator} {keyword}，operator支持 =, >, <, >=, <="
+    description: 超量怪兽阶级
     condition: (d.type & 8388608)
-    value: d.level
-    range:
-      min: 0
-      max: 13
+    items:
+      - condition: d.level = 0
+        value: "0"
+      - condition: d.level = 1
+        value: "1"
+      - condition: d.level = 2
+        value: "2"
+      - condition: d.level = 3
+        value: "3"
+      - condition: d.level = 4
+        value: "4"
+      - condition: d.level = 5
+        value: "5"
+      - condition: d.level = 6
+        value: "6"
+      - condition: d.level = 7
+        value: "7"
+      - condition: d.level = 8
+        value: "8"
+      - condition: d.level = 9
+        value: "9"
+      - condition: d.level = 10
+        value: "10"
+      - condition: d.level = 11
+        value: "11"
+      - condition: d.level = 12
+        value: "12"
+      - condition: d.level = 13
+        value: "13"
 
   # 连接数
   - id: link
     name: LINK
-    description: "d.level {operator} {keyword}，operator支持 =, >, <, >=, <="
+    description: 连接怪兽连接数
     condition: (d.type & 67108864)
-    value: d.level
-    range:
-      min: 1
-      max: 8
+    items:
+      - condition: d.level = 1
+        value: "1"
+      - condition: d.level = 2
+        value: "2"
+      - condition: d.level = 3
+        value: "3"
+      - condition: d.level = 4
+        value: "4"
+      - condition: d.level = 5
+        value: "5"
+      - condition: d.level = 6
+        value: "6"
+      - condition: d.level = 7
+        value: "7"
+      - condition: d.level = 8
+        value: "8"
 
   # 攻击力
   - id: atk
