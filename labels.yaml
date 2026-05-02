@@ -180,14 +180,10 @@ mappings:
         value: OCG
       - condition: d.ot = 2
         value: TCG
-      - condition: d.ot = 3
+      - condition: d.ot = 3 OR d.ot = 9 OR d.ot = 11
         value: "OCG|TCG"
       - condition: d.ot = 4
         value: 自定义
-      - condition: d.ot = 9
-        value: "OCG|TCG"
-      - condition: d.ot = 11
-        value: "OCG|TCG"
 
   # 等级 - 排除连接怪兽和超量怪兽
   - id: level
