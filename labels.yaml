@@ -85,6 +85,11 @@ mappings:
         value: 连接
       - condition: (d.type & 128) > 0
         value: 仪式
+
+  # 灵摆
+  - id: pendulum
+    name: 灵摆
+    items:
       - condition: (d.type & 16777216) > 0
         value: 灵摆
 
