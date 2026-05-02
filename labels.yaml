@@ -210,3 +210,90 @@ mappings:
       - condition: d.level = 6
         value: "6"
       - condition: d.level = 7
+        value: "7"
+      - condition: d.level = 8
+        value: "8"
+      - condition: d.level = 9
+        value: "9"
+      - condition: d.level = 10
+        value: "10"
+      - condition: d.level = 11
+        value: "11"
+      - condition: d.level = 12
+        value: "12"
+      - condition: d.level = 13
+        value: "13"
+
+  # 阶级
+  - id: rank
+    name: 阶级
+    description: 超量怪兽阶级
+    condition: (d.type & 8388608)
+    items:
+      - condition: d.level = 0
+        value: "0"
+      - condition: d.level = 1
+        value: "1"
+      - condition: d.level = 2
+        value: "2"
+      - condition: d.level = 3
+        value: "3"
+      - condition: d.level = 4
+        value: "4"
+      - condition: d.level = 5
+        value: "5"
+      - condition: d.level = 6
+        value: "6"
+      - condition: d.level = 7
+        value: "7"
+      - condition: d.level = 8
+        value: "8"
+      - condition: d.level = 9
+        value: "9"
+      - condition: d.level = 10
+        value: "10"
+      - condition: d.level = 11
+        value: "11"
+      - condition: d.level = 12
+        value: "12"
+      - condition: d.level = 13
+        value: "13"
+
+  # 连接数
+  - id: link
+    name: LINK
+    description: 连接怪兽连接数
+    condition: (d.type & 67108864)
+    items:
+      - condition: d.level = 1
+        value: "1"
+      - condition: d.level = 2
+        value: "2"
+      - condition: d.level = 3
+        value: "3"
+      - condition: d.level = 4
+        value: "4"
+      - condition: d.level = 5
+        value: "5"
+      - condition: d.level = 6
+        value: "6"
+
+  # 攻击力
+  - id: atk
+    name: 攻击力
+    description: "d.atk {operator} {keyword}，operator支持 =, >, <, >=, <=；-1 代表 ?（不确定数值）"
+    condition: (d.type & 1)
+    value: d.atk
+    range:
+      min: -1
+      max: 5000
+
+  # 防御力
+  - id: def
+    name: 防御力
+    description: "d.def {operator} {keyword}，operator支持 =, >, <, >=, <=；-1 代表 ?（不确定数值）"
+    condition: (d.type & 1) AND (d.type & 67108864) = 0
+    value: d.def
+    range:
+      min: -1
+      max: 5000
