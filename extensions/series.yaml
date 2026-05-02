@@ -434,7 +434,7 @@ items:
     value: 沉默剑士
   - condition: d.setcode & 0xFFF = 232
     value: 沉默魔术师
-  - condition: d.setcode & 0xFFF = 233
+  - condition: d.setcode & 0xFFF = 233 OR d.setcode & 0xFFFF = 8294
     value: 磁石战士
   - condition: d.setcode & 0xFFF = 234
     value: 水晶机巧|非「机巧」
@@ -1064,8 +1064,6 @@ items:
     value: No.99
   - condition: d.setcode & 0xFFFF = 8274
     value: 法理守护者
-  - condition: d.setcode & 0xFFFF = 8294
-    value: 磁石战士
   - condition: d.setcode & 0xFFFF = 8303
     value: 英豪冠军
   - condition: d.setcode & 0xFFFF = 8307
