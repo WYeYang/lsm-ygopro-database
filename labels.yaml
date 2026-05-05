@@ -189,7 +189,7 @@ mappings:
   - id: level
     name: 等级
     description: 怪兽等级
-    condition: (d.type & 1) AND (d.type & 67108864) = 0 AND (d.type & 8388608) = 0
+    condition: ((d.type & 1) > 0) AND ((d.type & 67108864) = 0) AND ((d.type & 8388608) = 0)
     items:
       - condition: d.level = 0
         value: "0"
@@ -224,7 +224,7 @@ mappings:
   - id: rank
     name: 阶级
     description: 超量怪兽阶级
-    condition: (d.type & 8388608)
+    condition: ((d.type & 8388608) > 0)
     items:
       - condition: d.level = 0
         value: "0"
@@ -259,7 +259,7 @@ mappings:
   - id: link
     name: LINK
     description: 连接怪兽连接数
-    condition: (d.type & 67108864)
+    condition: ((d.type & 67108864) > 0)
     items:
       - condition: d.level = 1
         value: "1"
