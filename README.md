@@ -1,5 +1,6 @@
 # LSM YGOPRO 卡片数据库配置
 
+[![Build Status](https://github.com/WYeYang/lsm-ygopro-database/actions/workflows/release.yml/badge.svg)](https://github.com/WYeYang/lsm-ygopro-database/actions/workflows/release.yml)
 [![Version](https://img.shields.io/badge/version-v1.0.0-blue)](https://github.com/WYeYang/lsm-ygopro-database/releases/tag/v1.0.0)
 
 ## 安装
