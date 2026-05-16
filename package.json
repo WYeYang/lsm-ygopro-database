@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "YGOPRO 卡片数据库的 LSM 配置",
   "main": "labels.yaml",
+  "scripts": {
+    "update-readme-version": "node -e \"const pkg = require('./package.json'); const fs = require('fs'); let readme = fs.readFileSync('README.md', 'utf8'); readme = readme.replace(/badge\\/version-v[\\d.]+-blue/, 'badge/version-v' + pkg.version + '-blue'); readme = readme.replace(/releases\\/tag\\/v[\\d.]+/, 'releases/tag/v' + pkg.version); fs.writeFileSync('README.md', readme, 'utf8'); console.log('README.md version updated to v' + pkg.version);\"",
+    "prepublishOnly": "npm run update-readme-version"
+  },
   "files": [
     "labels.yaml",
     "extensions"

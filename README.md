@@ -1,5 +1,7 @@
 # LSM YGOPRO 卡片数据库配置
 
+[![Version](https://img.shields.io/badge/version-v1.0.0-blue)](https://github.com/WYeYang/lsm-ygopro-database/releases/tag/v1.0.0)
+
 ## 安装
 
 ```bash
