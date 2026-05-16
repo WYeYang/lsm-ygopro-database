@@ -17,7 +17,7 @@ jobs:
       - name: Create tarball
         run: |
           mkdir -p package
-          cp -r labels.yaml extensions cards.cdb package.json README.md package/
+          cp -r labels.yaml extensions package.json README.md package/
           cd package
           tar -czf ../lsm-ygopro-database-${{ github.ref_name }}.tar.gz .
       
