@@ -1,0 +1,29 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions: write-all
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Create tarball
+        run: |
+          mkdir -p package
+          cp -r labels.yaml extensions cards.cdb package.json README.md package/
+          cd package
+          tar -czf ../lsm-ygopro-database-${{ github.ref_name }}.tar.gz .
+      
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: lsm-ygopro-database-${{ github.ref_name }}.tar.gz
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
