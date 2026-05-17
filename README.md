@@ -1,14 +1,15 @@
 # LSM YGOPRO 卡片数据库配置
 
 [![Build Status](https://github.com/WYeYang/lsm-ygopro-database/actions/workflows/release.yml/badge.svg)](https://github.com/WYeYang/lsm-ygopro-database/actions/workflows/release.yml)
-[![Version](https://img.shields.io/badge/version-v1.0.0-blue)](https://github.com/WYeYang/lsm-ygopro-database/releases/tag/v1.0.0)
+[![GitHub Release](https://img.shields.io/github/v/release/WYeYang/lsm-ygopro-database?sort=semver)](https://github.com/WYeYang/lsm-ygopro-database/releases)
 
 ## 安装
 
 推荐从 GitHub Releases 下载预打包的 tarball 安装：
 
 ```bash
-npm install https://github.com/WYeYang/lsm-ygopro-database/releases/download/v1.0.0/lsm-ygopro-database-1.0.0.tgz
+# 去 https://github.com/WYeYang/lsm-ygopro-database/releases 下载最新版本的 tgz 文件
+npm install /path/to/lsm-ygopro-database-*.tgz
 ```
 
 或者从 GitHub 仓库安装：
