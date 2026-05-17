@@ -8,7 +8,7 @@
 推荐从 GitHub Releases 下载预打包的 tarball 安装：
 
 ```bash
-npm install https://github.com/WYeYang/lsm-ygopro-database/releases/download/v1.0.0/lsm-ygopro-database-v1.0.0.tar.gz
+npm install https://github.com/WYeYang/lsm-ygopro-database/releases/download/v1.0.0/lsm-ygopro-database-1.0.0.tgz
 ```
 
 或者从 GitHub 仓库安装：
