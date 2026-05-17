@@ -8,14 +8,8 @@
 推荐从 GitHub Releases 下载预打包的 tarball 安装：
 
 ```bash
-# 去 https://github.com/WYeYang/lsm-ygopro-database/releases 下载最新版本的 tgz 文件
-npm install /path/to/lsm-ygopro-database-*.tgz
-```
-
-或者从 GitHub 仓库安装：
-
-```bash
-npm install https://github.com/WYeYang/lsm-ygopro-database
+# 去 https://github.com/WYeYang/lsm-ygopro-database/releases/latest 查看最新版本号，替换下面的 vX.X.X
+npm install https://github.com/WYeYang/lsm-ygopro-database/releases/download/vX.X.X/lsm-ygopro-database-vX.X.X.tgz
 ```
 
 ## 规范与 SDK
