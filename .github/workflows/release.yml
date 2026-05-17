@@ -16,14 +16,11 @@ jobs:
       
       - name: Create tarball
         run: |
-          mkdir -p package
-          cp -r labels.yaml extensions package.json README.md package/
-          cd package
-          tar -czf ../lsm-ygopro-database-${{ github.ref_name }}.tar.gz .
+          npm pack
       
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          files: lsm-ygopro-database-${{ github.ref_name }}.tar.gz
+          files: lsm-ygopro-database-*.tgz
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
